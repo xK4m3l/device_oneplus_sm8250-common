@@ -3,3 +3,6 @@ r_dir_file(vendor_sensors, sysfs_project_info)
 
 # Allow QTI sensors to read from mounted vendor files.
 r_dir_file(vendor_sensors, oem_file)
+
+allow vendor_sensors oem_file:dir { search getattr read };
+allow vendor_sensors oem_file:file { read open map getattr };
