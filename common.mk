@@ -187,8 +187,10 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
-    Snap \
     vendor.qti.hardware.camera.postproc@1.0.vendor
+
+# OnePlus Camera
+$(call inherit-product-if-exists, vendor/oneplus/opcamera/opcamera-vendor.mk)
 
 # Common init scripts
 PRODUCT_PACKAGES += \
