@@ -4,3 +4,4 @@ allow init hidl_base_hwservice:hwservice_manager add;
 allow init vendor_hal_perf_hwservice:hwservice_manager find;
 allow init debugfs_tracing_debug:dir mounton;
 allow init op2_file:dir mounton;
+allow init adsprpcd_file:file mounton;

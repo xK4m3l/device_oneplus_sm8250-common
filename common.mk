@@ -23,6 +23,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/sm8250-common/sm8250-common-vendor.mk)
 
+# Inherit packages from vendor/oneplus/addons/camera
+$(call inherit-product, vendor/oneplus/addons/camera/camera-vendor.mk)
+
 # Inherit OnePlus-fwk
 $(call inherit-product, vendor/oneplus/extras/OnePlus-fwk.mk)
 
@@ -209,7 +212,7 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
-    Snap \
+    libcamera2ndk_vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
 # Common init scripts
@@ -226,6 +229,7 @@ PRODUCT_PACKAGES += \
     init.oem.rc \
     init.oem.sec.rc \
     init.oem_ftm.rc \
+    init.oneplus.camera.rc \
     init.oplus_chg.sh \
     init.qcom.class_core.sh \
     init.qcom.coex.sh \
@@ -328,6 +332,9 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
     libhwbinder.vendor
 
 # HotwordEnrollement app permissions
